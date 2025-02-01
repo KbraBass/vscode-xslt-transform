@@ -1,4 +1,4 @@
-import {Disposable, OutputChannel, window} from "vscode";
+import { Disposable, OutputChannel, window } from "vscode";
 
 class XSLTOutputChannel implements Disposable {
     private readonly channel: OutputChannel = window.createOutputChannel("XSLT");
@@ -10,7 +10,7 @@ class XSLTOutputChannel implements Disposable {
             const highlightingTitle: string = `[${title} ${simplifiedTime}]`;
             this.channel.appendLine(highlightingTitle);
         }
-        this.channel.appendLine(message);
+        this.channel.appendLine(message.toString());
     }
 
     public append(message: any): void {
